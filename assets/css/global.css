@@ -1,71 +1,63 @@
-/* ====== Variables Css ====== */
-
+/* tokens css | typography */
 :root {
-    /* === Font Familys === */
-    --font: 'Inter', sans-serif;
-    /* === Headline / Font Sizes === */
-    --h1: 2.5rem;
-    --h2: 1.5rem;
-    --h3: 1.25rem;
-    --h4: 1rem;
-    --body-normal: .1rem;
-    --body-small: .875rem;
+    --ff1: 'Outfit', sans-serif;
+    --ff2: 'DM Sans', sans-serif;
+    --h1: 48px;
+    --h2: 32px;
+    --h3: 28px;
+    --h4: 24px;
+    --h5: 20px;
+    --h6: 16px;
+    --body-lg: 18px;
+    --body-md: 16px;
+    --body-sm: 14px;
 }
 
-
-/* ====== Colors ======= */
-
+/* tokens css | colors */
 :root {
-    /* === Primary === */
     --p-100: #7B61FF;
     --p-80: #9581FF;
     --p-60: #B0A0FF;
     --p-40: #CAC0FF;
     --p-20: #E5DFFF;
     --p-10: #F2EFFF;
-    /* === Dark === */
-    --d-100: #202020;
+
+    --dark-900: ##1d1d1d;
     --d-80: #4D4D4D;
     --d-60: #797979;
     --d-40: #A6A6A6;
     --d-20: #D2D2D2;
-    /* === White === */
+
     --W-100: #FFFFFF;
     --W-80: #FAFAFA;
     --W-60: #F5F5F5;
     --W-40: #EFEFEF;
     --W-20: #EAEAEA;
-    /* === Success === */
+
     --s-100: #39F256;
     --s-80: #60F578;
     --s-60: #88F79A;
     --s-40: #B0FABB;
     --s-20: #D7FCDD;
     --s-10: #EBFEEE;
-    /* === Error === */
-    --s-100: #F23987;
-    --s-80: #F5609F;
-    --s-60: #F788B7;
-    --s-40: #FAB0CF;
-    --s-20: #FCD7E7;
-    --s-10: #FEEBF3;
+
+    --dg-100: #F23987;
+    --dg-80: #F5609F;
+    --dg-60: #F788B7;
+    --dg-40: #FAB0CF;
+    --dg-20: #FCD7E7;
+    --dg-10: #FEEBF3;
 }
 
-
-/* ====== Reset ====== */
-
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 body {
-    font-family: var(--font);
-    scroll-behavior: smooth;
+    font-family: var(--ff2);
     line-height: 1.6;
 }
 
@@ -74,8 +66,9 @@ a {
 }
 
 p,
-a {
-    color: var(--d-60);
+a,
+span {
+    color: var(--d-80);
 }
 
 ul {
@@ -90,34 +83,39 @@ img {
 h1,
 h2,
 h3,
-h4 {
-    line-height: 1.6;
-    color: var(--p-100);
+h4,
+h5,
+h6 {
+    font-family: var(--ff1);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--d-100);
 }
 
+.h1 {
+    font-size: var(--h1);
+}
 
-/* ====== Classes ====== */
+.body-lg {
+    font-size: var(--body-lg);
+    line-height: 28px;
+}
 
+.body-md {
+    font-size: var(--body-md);
+    line-height: 26px;
+}
 
-/* No container use ele para alinhar ao centro os elementos
-e para dar o espaço em branco neceessario. */
+.body-sm {
+    font-size: var(--body-sm);
+    line-height: 24px;
+}
 
+/* Classes | Layout */
 .container {
-    max-width: 1300px;
-    padding: 64px 0;
-    margin: 120px auto;
-}
-
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.flex-center {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    max-width: 920px;
+    padding: 96px 0;
+    margin: 0 auto;
 }
 
 .social-media {
@@ -140,36 +138,47 @@ e para dar o espaço em branco neceessario. */
     border-radius: 30px;
 }
 
+/* Components */
 
-/* ====== Components ====== */
-
-
-/* ===  Buttons === */
-
+/* Buttons */
 .btn {
+    font-family: var(--ff2);
+    font-weight: 500;
+    text-transform: capitalize;
     display: inline-block;
-    padding: 16px 40px;
-    font-size: var(--body-small);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .5px;
     transition: all 200ms ease;
+    border-radius: 8px;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.btn-md {
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.btn-lg {
+    padding: 18px 40px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.btn-primary {
+    background: var(--p-100);
     color: var(--W-100);
-    border-radius: 4px;
-    background-color: var(--p-100);
 }
 
-.btn:hover {
-    background-color: var(--p-80);
+.btn-primary:hover {
+    background: var(--p-80);
+    transform: translateY(-2px);
 }
-
-.btn:active {
-    background-color: var(--p-60);
-}
-
 
 /* === Inputs === */
-
 label {
     font-size: var(--body-small);
     display: block;
@@ -189,41 +198,37 @@ input:focus {
     background-color: transparent;
 }
 
-
-/* ===  Header === */
-
-.main-header {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 24px 5px;
-    justify-content: space-between;
+/* Header */
+header {
+    display: flex;
     align-items: center;
-    background-color: var(--W-100);
+    justify-content: space-between;
+    padding: 32px 5px !important;
 }
 
 .nav-links {
-    gap: 20px;
-    list-style: none;
+    display: flex;
+    gap: 24px;
 }
 
 .nav-link {
-    padding: 20px;
-    font-size: var(--body-small);
     transition: all 300ms ease;
 }
 
 .nav-link:hover {
-    color: var(--primary-main);
+    color: var(--p-100);
 }
 
 #btn-mobile {
     display: none;
 }
 
-
-/* == mobile menu == */
-
+/* Mobile Menu */
 @media only screen and (max-width: 767px) {
+    header {
+        padding: 32px 15px !important;
+    }
+
     #btn-mobile {
         display: block;
         background: none;
@@ -231,6 +236,7 @@ input:focus {
         padding: 16px;
         cursor: pointer;
     }
+
     #nav-links {
         display: block;
         position: absolute;
@@ -244,24 +250,29 @@ input:focus {
         overflow-y: hidden;
         text-align: center;
     }
+
+    .nav-link {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
     #navbar.active #nav-links {
         display: flex;
-        padding: 5px;
         flex-direction: column;
-        height: calc(100vh - 85px);
+        justify-content: center;
+        padding: 5px;
+        height: calc(100vh - 112px);
         visibility: visible;
         overflow-y: auto;
+        background: var(--W-100);
     }
-    #nav-link {
-        display: block;
-        margin: 40px 10px;
-        transition: all 200ms ease;
-    }
+
     #ham-btn {
         display: block;
         width: 20px;
         border-top: 2px solid var(--p-100);
     }
+
     #ham-btn::after,
     #ham-btn::before {
         content: "";
@@ -273,24 +284,26 @@ input:focus {
         transition: .3s;
         position: relative;
     }
+
     #navbar.active #ham-btn {
         border-top-color: transparent;
     }
+
     #nabarv.active #ham-btn {
         border-top-color: transparent;
     }
+
     #navbar.active #ham-btn::before {
         transform: rotate(135deg);
     }
+
     #navbar.active #ham-btn::after {
         transform: rotate(-135deg);
         top: -7px;
     }
 }
 
-
 /* === Footer === */
-
 .main-footer {
     flex-direction: column;
     background-color: var(--W-80);
